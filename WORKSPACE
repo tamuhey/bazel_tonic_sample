@@ -16,3 +16,13 @@ rust_repositories()
 load("//cargo:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()
+
+# protoc
+http_archive(
+    name = "protobuf",
+    build_file_content = """exports_files(["bin/protoc"])""",
+    sha256 = "d4246a5136cf9cd1abc851c521a1ad6b8884df4feded8b9cbd5e2a2226d4b357",
+    urls = [
+        "https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protoc-3.17.3-linux-x86_64.zip",
+    ],
+)

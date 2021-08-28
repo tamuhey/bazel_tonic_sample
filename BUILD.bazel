@@ -3,6 +3,12 @@ load("@rules_rust//rust:rust.bzl", "rust_binary")
 
 rust_binary(
     name = "app",
-    srcs = ["main.rs"],
+    srcs = ["src/main.rs"],
     deps = all_crate_deps(),
+)
+
+alias(
+    name = "protoc",
+    actual = "@protobuf//:bin/protoc",
+    visibility = ["//visibility:public"],
 )
