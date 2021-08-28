@@ -1,0 +1,8 @@
+load("//cargo:crates.bzl", "all_crate_deps")
+load("@rules_rust//rust:rust.bzl", "rust_binary")
+
+rust_binary(
+    name = "app",
+    srcs = ["main.rs"],
+    deps = all_crate_deps(),
+)
